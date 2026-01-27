@@ -4,10 +4,14 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Entity
+@Getter
+@Setter
 public class Flower {
 
     @Id
@@ -41,51 +45,11 @@ public class Flower {
         this.wiki = wiki;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
     public double getPrice() {
         return price.doubleValue();
     }
 
     public void setPrice(Double price) {
         this.price = BigDecimal.valueOf(price);
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String text) {
-        this.description = text;
-    }
-
-    public Picture getPicture() {
-        return picture;
-    }
-
-    public void setPicture(Picture pictures) {
-        this.picture = pictures;
-    }
-
-    public String getWiki() {
-        return wiki;
-    }
-
-    public void setWiki(String wiki) {
-        this.wiki = wiki;
     }
 }
