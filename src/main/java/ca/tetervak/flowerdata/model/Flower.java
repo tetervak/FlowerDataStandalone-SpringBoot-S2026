@@ -50,6 +50,9 @@ public class Flower {
     }
 
     public void setPrice(Double price) {
+        if (price == null || price < 0) {
+            throw new IllegalArgumentException("Price cannot be null or negative");
+        }
         this.price = BigDecimal.valueOf(price);
     }
 }
