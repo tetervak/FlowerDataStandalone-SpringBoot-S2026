@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
-    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
-    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <title>Flower List</title>
 </head>
 <body>
@@ -16,12 +16,9 @@
     <table>
         <tr th:each="f: ${flowers}">
             <td>
-                <a href="flower-details.html"
-                   th:href="@{/flowers/{id}(id=${f.id})}">
+                <a th:href="@{/flowers/{id}(id=${f.id})}">
                     <img class="thumb"
-                         src="../static/images/flowers/aster_small.jpeg"
                          th:src="@{|/images/flowers/${f.picture.small}|}"
-                         alt="Aster"
                          th:alt="${f.label}">
                 </a>
             </td>
@@ -32,8 +29,7 @@
                     The name Aster comes from the Ancient Greek word meaning star,
                     referring to the shape of the flower head."
                 </span><br/>
-                <a href="flower-details.html"
-                   th:href="@{/flowers/{id}(id=${f.id})}">More info</a>
+                <a th:href="@{/flowers/{id}(id=${f.id})}">More info</a>
             </td>
         </tr>
     </table>

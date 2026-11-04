@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
-    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
-    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <title>Flower Details</title>
 </head>
 <body>
@@ -21,9 +21,7 @@
     </p>
     <p>
         <img class='flower_image'
-            src='../static/images/flowers/aster_large.jpeg'
             th:src="@{|/images/flowers/${flower.picture.large}|}"
-            alt="Aster"
             th:alt="${flower.label}">
     </p>
     <p class="flower_info"
@@ -36,8 +34,7 @@
             th:href="${flower.wiki}">Wikipedia</a>
     </p>
     <p>
-        <a href="flower-list.html"
-        th:href="@{/flowers}">Flower List</a>
+        <a th:href="@{/flowers}">Flower List</a>
     </p>
 </main>
 <footer th:replace="~{header-and-footer::footer}">
