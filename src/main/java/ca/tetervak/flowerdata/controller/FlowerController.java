@@ -33,15 +33,8 @@ public class FlowerController {
                 repository.findById(id).orElseThrow());
     }
 
-    @ModelAttribute("localDate")
-    LocalDate getlLocalDate(){
-        return LocalDate.now();
-    }
-
     @ExceptionHandler(NoSuchElementException.class)
     ModelAndView dataNotFound(NoSuchElementException e){
-        ModelAndView mv = new ModelAndView("data-not-found", "message", e.getMessage());
-        mv.addObject("localDate", getlLocalDate());
-        return mv;
+        return new ModelAndView("data-not-found", "message", e.getMessage());
     }
 }

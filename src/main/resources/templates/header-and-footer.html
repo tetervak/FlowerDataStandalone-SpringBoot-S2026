@@ -16,7 +16,7 @@
 </main>
 <footer th:fragment="Footer">
   Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;
-    <span th:text="${#temporals.format(localDate, 'MMMM dd, yyyy')}">March 15, 2023</span>
+    <span th:text="${#temporals.format(#temporals.createNow(), 'MMMM dd, yyyy')}">March 15, 2023</span>
 </footer>
 </body>
 </html>
